@@ -1,11 +1,14 @@
 import { Page } from "@/libs/components";
-import { useGetCurrentRead } from "@/libs/data/useGetCurrentRead";
+import { useGetCurrentRead } from "@book-data";
 
-export default function Home() {
-  const title = useGetCurrentRead();
+export const Home = () => {
+  const book = useGetCurrentRead();
+
   return (
     <Page title="Dashboard">
-      <span>current reade: </span>
+      <span>Current read: {book.title}</span>
     </Page>
   );
 }
+
+export default Home;

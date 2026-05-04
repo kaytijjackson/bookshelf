@@ -8,10 +8,19 @@ const PageContainer = styled.div`
   width: 100%;
   padding: 16px;
   height: 100vh;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Contents = styled.div`
   grid-column: 2/3;
+
+  @media screen and (max-width: 768px) {
+    grid-column: none;
+  }
 `;
 
 const TitleText = styled.h1`
