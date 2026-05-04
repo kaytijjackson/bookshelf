@@ -22,7 +22,6 @@ const NavLink = styled(Link)<{ $isActive: boolean }>`
 
 export const NavMenu = () => {
   const currentPath = usePathname();
-  console.log('currentPath', currentPath);
 
   return (
     <NavContainer>
