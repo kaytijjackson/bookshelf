@@ -9,6 +9,10 @@ export const StyledTable = styled.table`
   th:last-of-type {
     text-align: right;
   }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const HeaderCell = styled.th`
@@ -16,6 +20,13 @@ export const HeaderCell = styled.th`
 `;
 
 // History List
+export const List = styled(VStack).attrs({ spacing: 8 })`
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
+`;
+
 export const ListItem = styled(VStack).attrs({ spacing: 4 })`
   > div {
     justify-content: space-between;
@@ -24,10 +35,6 @@ export const ListItem = styled(VStack).attrs({ spacing: 4 })`
 
 export const Divider = styled.hr`
   border-top: 1px solid grey;
-
-  &:last-of-type {
-    border-top: none;
-  }
 `;
 
 // Pagination
@@ -41,4 +48,10 @@ export const PaginationButton = styled.button<{ disabled: boolean }>`
   outline: 1px solid ${(props) => (props.disabled ? "grey" : "black")};
   border-radius: 1px;
   padding: 4px;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: ${(props) => (props.disabled ? "transparent" : "silver")};
+  }
 `;

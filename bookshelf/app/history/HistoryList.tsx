@@ -2,12 +2,12 @@ import { HStack, VStack } from "@components";
 import { CompletedBookType } from "@book-data";
 import { TABLE_HEADERS } from "./const";
 import { formatDate } from "@utils";
-import { Divider, ListItem } from "./styles";
+import { Divider, List, ListItem } from "./styles";
 import { Fragment } from "react/jsx-runtime";
 
 export const HistoryList = ({ history }: { history: CompletedBookType[] }) => (
-  <VStack spacing={8}>
-    {history.map((book) => (
+  <List>
+    {history.map((book, index) => (
       <Fragment key={book.id}>
         <ListItem>
           <HStack>
@@ -31,8 +31,10 @@ export const HistoryList = ({ history }: { history: CompletedBookType[] }) => (
             <span>{formatDate(book.endDate)}</span>
           </HStack>
         </ListItem>
-        <Divider />
+        {index !== history.length - 1 && (
+            <Divider />
+        )}
       </Fragment>
     ))}
-  </VStack>
+  </List>
 );

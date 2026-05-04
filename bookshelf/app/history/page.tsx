@@ -1,18 +1,16 @@
 "use client";
 
-import { Page } from "@components";
+import { Page, VStack } from "@components";
 import { useReadingHistory } from "@book-data";
 import { HistoryTable } from "./HistoryTable";
 import { Pagination } from "./Pagination";
 import { useMemo, useState } from "react";
 import { MAX_VISIBLE } from "./const";
 import { HistoryList } from "./HistoryList";
-import { useMediaQuery } from "@reactuses/core";
 
 export const HistoryPage = () => {
   const history = useReadingHistory();
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const handleNext = () => {
     setCurrentPage(currentPage + 1);
@@ -36,17 +34,16 @@ export const HistoryPage = () => {
 
   return (
     <Page title="History Page">
-      {isMobile ? (
+      <VStack spacing={8}>
         <HistoryList history={visibleBooks} />
-      ) : (
         <HistoryTable history={visibleBooks} />
-      )}
-      <Pagination
-        handleNext={handleNext}
-        handlePrev={handlePrev}
-        currentPage={currentPage}
-        totalPages={totalPages}
-      />
+        <Pagination
+          handleNext={handleNext}
+          handlePrev={handlePrev}
+          currentPage={currentPage}
+          totalPages={totalPages}
+        />
+      </VStack>
     </Page>
   );
 };
