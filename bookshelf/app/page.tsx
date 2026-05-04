@@ -1,4 +1,4 @@
-import { Page } from "@/libs/components";
+import { Page } from "@components";
 import { useGetCurrentRead } from "@book-data";
 
 export const Home = () => {

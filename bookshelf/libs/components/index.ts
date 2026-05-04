@@ -1,2 +1,3 @@
-export { Page } from "./Page";
-export { NavMenu } from "./NavMenu";
+export { Page } from "./Page/Page";
+export { NavMenu } from "./NavMenu/NavMenu";
+export * from './Stacks';

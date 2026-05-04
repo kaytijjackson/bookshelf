@@ -6,10 +6,13 @@ import { HistoryTable } from "./HistoryTable";
 import { Pagination } from "./Pagination";
 import { useMemo, useState } from "react";
 import { MAX_VISIBLE } from "./const";
+import { HistoryList } from "./HistoryList";
+import { useMediaQuery } from "@reactuses/core";
 
-export const HistoryPage = ({}) => {
+export const HistoryPage = () => {
   const history = useReadingHistory();
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const handleNext = () => {
     setCurrentPage(currentPage + 1);
@@ -33,7 +36,11 @@ export const HistoryPage = ({}) => {
 
   return (
     <Page title="History Page">
-      <HistoryTable history={visibleBooks} />
+      {isMobile ? (
+        <HistoryList history={visibleBooks} />
+      ) : (
+        <HistoryTable history={visibleBooks} />
+      )}
       <Pagination
         handleNext={handleNext}
         handlePrev={handlePrev}

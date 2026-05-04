@@ -1,8 +1,8 @@
-import { useReadingHistory } from "@/libs/data";
+import { useReadingHistory } from '../../libs/data/useReadingHistory';
 import { HistoryPage } from "./page";
 import { render, screen } from "@testing-library/react";
 
-jest.mock("@book-data");
+jest.mock('../../libs/data/useReadingHistory');
 
 describe("History", () => {
   beforeEach(() => {

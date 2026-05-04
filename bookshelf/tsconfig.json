@@ -23,6 +23,7 @@
       "@/*": ["./*"],
       "@components": ["./libs/components"],
       "@book-data": ["./libs/data"],
+      "@utils": ["./libs/utils"],
     }
   },
   "include": [

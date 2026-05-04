@@ -1,3 +1,4 @@
+import { HStack, VStack } from "@components";
 import styled from "styled-components";
 
 // History Table
@@ -14,11 +15,23 @@ export const HeaderCell = styled.th`
   text-align: left;
 `;
 
+// History List
+export const ListItem = styled(VStack).attrs({ spacing: 4 })`
+  > div {
+    justify-content: space-between;
+  }
+`;
+
+export const Divider = styled.hr`
+  border-top: 1px solid grey;
+
+  &:last-of-type {
+    border-top: none;
+  }
+`;
+
 // Pagination
-export const PaginationRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
+export const PaginationRow = styled(HStack).attrs({ spacing: 8 })`
   justify-content: end;
   align-self: end;
 `;
