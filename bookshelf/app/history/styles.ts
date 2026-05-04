@@ -52,6 +52,6 @@ export const PaginationButton = styled.button<{ disabled: boolean }>`
   &:hover,
   &:focus {
     cursor: pointer;
-    background-color: ${(props) => (props.disabled ? "transparent" : "silver")};
+    background-color: ${(props) => (props.disabled ? "transparent" : "Gainsboro")};
   }
 `;
