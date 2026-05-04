@@ -1,0 +1,52 @@
+{
+    "books": [
+        {
+            "id": "978-0-00-812320-9",
+            "title": "And Then There Were None",
+            "author": "Agatha Christie",
+            "genre": "Mystery",
+            "rating": 3.75,
+            "endDate": "2026-03-29"
+        },
+        {
+            "id": "978-1-4642-2136-1",
+            "title": "Never Lie",
+            "author": "Frieda McFadden",
+            "genre": "Thriller",
+            "rating": 3.75,
+            "endDate": "2025-03-21"
+        },
+        {
+            "id": "978-1-4642-2135-4",
+            "title": "The Locked Door",
+            "author": "Frieda McFadden",
+            "genre": "Thriller",
+            "rating": 3.75,
+            "endDate": "2026-01-11"
+        },
+        {
+            "id": "978-1-4642-2138-5",
+            "title": "The Inmate",
+            "author": "Frieda McFadden",
+            "genre": "Thriller",
+            "rating": 4,
+            "endDate": "2024-08-20"
+        },
+        {
+            "id": "978-1-4087-2851-2",
+            "title": "The Housemaid",
+            "author": "Frieda McFadden",
+            "genre": "Thriller",
+            "rating": 4.5,
+            "endDate": "2024-08-30"
+        },
+        {
+            "id": "978-0-00-853281-9",
+            "title": "Yellowface",
+            "author": "R.F. Kuang",
+            "genre": "Thriller",
+            "rating": 3.75,
+            "endDate": "2025-01-03"
+        }
+    ]
+}

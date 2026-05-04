@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@components": ["./libs/components"],
+      "@book-data": ["./libs/data"],
     }
   },
   "include": [
