@@ -1,6 +1,12 @@
 "use client";
 
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  ChartOptions,
+} from "chart.js";
 import { Pie } from "react-chartjs-2";
 import { ChartContainer } from "./styles";
 
@@ -11,11 +17,13 @@ export const PieChart = ({
   labels,
   data,
   tooltipLabel,
+  options,
 }: {
   title: string;
   labels: string[];
   data: (number | undefined)[];
   tooltipLabel: string;
+  options?: ChartOptions;
 }) => {
   const pieChartData = {
     labels,
@@ -32,7 +40,7 @@ export const PieChart = ({
   return (
     <ChartContainer>
       <h2>{title}</h2>
-      <Pie data={pieChartData} />
+      <Pie data={pieChartData} options={options ? options : undefined} />
     </ChartContainer>
   );
 };

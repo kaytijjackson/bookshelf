@@ -44,7 +44,7 @@ describe("formatPageCountData", () => {
   it("should formatPageCountData", () => {
     expect(formatPageCountData(books)).toEqual({
       "< 200": 1,
-      "200-300": 2,
+      "200-299": 2,
       "500+": 1,
     });
   });
