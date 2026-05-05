@@ -2,6 +2,7 @@
 
 import { CompletedBookType } from "@book-data";
 import { PieChart } from "@components";
+import { ActiveElement, ChartEvent } from "chart.js";
 import { useRouter } from "next/navigation";
 
 export const formatGenreData = (history: CompletedBookType[]) => {
@@ -30,7 +31,7 @@ export const GenrePieChart = ({
   const data = Object.values(genreData);
 
   const options = {
-    onClick: (_, elements) => {
+    onClick: (_event: ChartEvent, elements: ActiveElement[]) => {
       if (elements.length > 0) {
         console.log('element', elements[0]);
         const index = elements[0].index;

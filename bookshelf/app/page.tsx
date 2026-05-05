@@ -21,7 +21,7 @@ export const Home = () => {
   return (
     <Page title="Dashboard">
       <VStack spacing={8}>
-        <span>Currently reading: {book.title}</span>
+        <span>Currently reading: &quot;{book.title}&quot; by {book.author}</span>
         <VStack spacing={4}>
           <span>Reading Goal: {booksYTD} of {goal}</span>
           <ProgressBar currentAmount={booksYTD} totalAmount={goal} />

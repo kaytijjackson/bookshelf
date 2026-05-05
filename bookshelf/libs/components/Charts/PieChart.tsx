@@ -23,7 +23,7 @@ export const PieChart = ({
   labels: string[];
   data: (number | undefined)[];
   tooltipLabel: string;
-  options?: ChartOptions;
+  options?: ChartOptions<'pie'>;
 }) => {
   const pieChartData = {
     labels,
