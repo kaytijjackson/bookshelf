@@ -9,8 +9,8 @@ describe("Page", () => {
       </Page>,
     );
 
-    expect(screen.getByRole("heading", { name: "test title" })).toBeDefined();
-    expect(screen.getByText("content")).toBeDefined();
+    expect(screen.getByRole("heading", { name: "test title" })).toBeVisible();
+    expect(screen.getByText("content")).toBeVisible();
   });
 
   it("should render without title", () => {

@@ -1,4 +1,4 @@
-import { HStack, VStack } from "@components";
+import { HStack } from "@components";
 import { CompletedBookType } from "@book-data";
 import { TABLE_HEADERS } from "./const";
 import { formatDate } from "@utils";

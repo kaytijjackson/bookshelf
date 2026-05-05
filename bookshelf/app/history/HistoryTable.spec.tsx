@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { HistoryTable } from "./HistoryTable";
-import { CompletedBookType } from "@/libs/data";
+import { CompletedBookType } from "@book-data";
 
 const history: CompletedBookType[] = [
   {
@@ -16,10 +16,10 @@ const history: CompletedBookType[] = [
 describe("HistoryTable", () => {
   it("should render", () => {
     render(<HistoryTable history={history} />);
-    expect(screen.getByRole('cell', { name: 'Book title' })).toBeDefined();
-    expect(screen.getByRole('cell', { name: 'Author 1' })).toBeDefined();
-    expect(screen.getByRole('cell', { name: '4' })).toBeDefined();
-    expect(screen.getByRole('cell', { name: 'Jan 1, 2026' })).toBeDefined();
-    expect(screen.getByRole('cell', { name: 'Fantasy' })).toBeDefined();
+    expect(screen.getByRole('cell', { name: 'Book title' })).toBeVisible();
+    expect(screen.getByRole('cell', { name: 'Author 1' })).toBeVisible();
+    expect(screen.getByRole('cell', { name: '4' })).toBeVisible();
+    expect(screen.getByRole('cell', { name: 'Jan 1, 2026' })).toBeVisible();
+    expect(screen.getByRole('cell', { name: 'Fantasy' })).toBeVisible();
   });
 });

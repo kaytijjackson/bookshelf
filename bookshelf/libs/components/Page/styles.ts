@@ -16,6 +16,7 @@ export const PageContainer = styled.div`
 
 export const Contents = styled(VStack)`
   grid-column: 2/3;
+  grid-gap: 16px;
 
   @media screen and (max-width: 768px) {
     grid-column: none;

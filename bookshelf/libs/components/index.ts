@@ -1,3 +1,4 @@
 export { Page } from "./Page/Page";
 export { NavMenu } from "./NavMenu/NavMenu";
-export * from './Stacks';
+export { ProgressBar } from "./ProgressBar/ProgressBar";
+export * from "./Stacks";

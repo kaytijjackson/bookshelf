@@ -25,12 +25,17 @@ export const HistoryPage = () => {
     [history],
   );
 
+  const sortedHistory = history.sort(
+    (book1, book2) =>
+      new Date(book2.endDate).getTime() - new Date(book1.endDate).getTime(),
+  );
+
   const visibleBooks = useMemo(() => {
-    return history.slice(
+    return sortedHistory.slice(
       (currentPage - 1) * MAX_VISIBLE,
       currentPage * MAX_VISIBLE,
     );
-  }, [history, currentPage]);
+  }, [sortedHistory, currentPage]);
 
   return (
     <Page title="History">

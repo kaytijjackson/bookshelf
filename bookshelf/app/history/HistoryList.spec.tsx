@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { HistoryList } from "./HistoryList";
-import { CompletedBookType } from "@/libs/data";
+import { CompletedBookType } from "@book-data";
 
 const history: CompletedBookType[] = [
   {

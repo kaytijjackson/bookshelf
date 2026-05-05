@@ -1,4 +1,4 @@
-import { CompletedBookType } from "@/libs/data";
+import { CompletedBookType } from "@book-data";
 import { useReadingHistory } from "../../libs/data/useReadingHistory";
 import { HistoryPage } from "./page";
 import { render, screen } from "@testing-library/react";
@@ -27,7 +27,7 @@ describe("History", () => {
     // expect mobile and web
     expect(screen.getAllByText("test book 0")).toHaveLength(2);
     expect(screen.queryByText('test book 5')).toBeNull();
-    expect(screen.getByRole('button', { name: 'Prev' })).toBeDefined();
+    expect(screen.getByRole('button', { name: 'Prev' })).toBeVisible();
   });
 
   it("should not render prev/next buttons if less than max", () => {

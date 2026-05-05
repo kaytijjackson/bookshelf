@@ -1,3 +1,4 @@
 export { useReadingHistory } from "./useReadingHistory";
-export { useGetCurrentRead } from "./useGetCurrentRead";
+export { useCurrentRead } from "./useCurrentRead";
+export { useReadingGoal } from './useReadingGoal';
 export * from "./types";

@@ -1,6 +1,6 @@
 import data from "./db/currentBook.json";
 import { BookType } from "./types";
 
-export const useGetCurrentRead: () => BookType = () => {
+export const useCurrentRead: () => BookType = () => {
   return data;
 };
