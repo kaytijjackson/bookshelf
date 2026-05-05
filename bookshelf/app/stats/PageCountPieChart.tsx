@@ -56,6 +56,7 @@ export const PageCountPieChart = ({
         console.log('element', elements[0]);
         const index = elements[0].index;
         const pageCountFilter = labels[index];
+        // TODO: Add cypress test for navigation
         router.push(`/history?filter=pageCount&type=${pageCountFilter}`);
       }
     }

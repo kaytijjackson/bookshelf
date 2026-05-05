@@ -35,6 +35,7 @@ export const GenrePieChart = ({
         console.log('element', elements[0]);
         const index = elements[0].index;
         const genreFilter = labels[index];
+        // TODO: Add cypress test for navigation
         router.push(`/history?filter=genre&type=${genreFilter}`);
       }
     }

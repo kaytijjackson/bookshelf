@@ -1,16 +1,17 @@
-import { HStack, Page } from "@components";
+import { Page } from "@components";
 import { useReadingHistory } from "@book-data";
 import { GenrePieChart } from "./GenrePieChart";
 import { PageCountPieChart } from "./PageCountPieChart";
+import { ChartsContainer } from './styles';
 
 export default function StatsPage() {
   const history = useReadingHistory();
   return (
     <Page title="Reading Breakdown">
-      <HStack>
+      <ChartsContainer>
         <GenrePieChart history={history} />
         <PageCountPieChart history={history} />
-      </HStack>
+      </ChartsContainer>
     </Page>
   );
 }
