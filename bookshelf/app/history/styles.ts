@@ -1,5 +1,6 @@
 import { HStack, VStack } from "@components";
 import styled from "styled-components";
+import { Button } from "@radix-ui/themes";
 
 // History Table
 export const StyledTable = styled.table`
@@ -46,7 +47,7 @@ export const PaginationRow = styled(HStack).attrs({ spacing: 8 })`
 export const PaginationButton = styled.button<{ disabled: boolean }>`
   color: ${(props) => (props.disabled ? "grey" : "black")};
   outline: 1px solid ${(props) => (props.disabled ? "grey" : "black")};
-  border-radius: 1px;
+  border-radius: 2px;
   padding: 4px;
 
   &:hover,

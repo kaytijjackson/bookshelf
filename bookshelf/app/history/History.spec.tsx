@@ -13,6 +13,7 @@ const generateMockBook: (id: string) => CompletedBookType = (id: string) => {
     genre: "Fantasy",
     rating: 3,
     endDate: "2026-01-01",
+    pageCount: 300,
   };
 };
 

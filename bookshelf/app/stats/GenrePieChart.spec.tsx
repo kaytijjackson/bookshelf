@@ -8,6 +8,7 @@ const books: CompletedBookType[] = [{
     genre: 'Mystery',
     endDate: '2026-01-01',
     rating: 4,
+    pageCount: 300,
 }, {
     id: '2',
     title: 'title2',
@@ -15,6 +16,7 @@ const books: CompletedBookType[] = [{
     genre: 'Mystery',
     endDate: '2026-02-01',
     rating: 4,
+    pageCount: 300,
 },{
     id: '1',
     title: 'title1',
@@ -22,6 +24,7 @@ const books: CompletedBookType[] = [{
     genre: 'Thriller',
     endDate: '2026-01-01',
     rating: 4,
+    pageCount: 300,
 }];
 
 describe('formatGenreData', () => {

@@ -8,7 +8,8 @@ export interface BookType {
     genre: string;
     // TODO: return as Date from graphql when implemented
     startDate?: string;
-    page?: number;
+    currentPage?: number;
+    pageCount: number;
 }
 
 export interface CompletedBookType extends BookType {

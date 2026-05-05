@@ -6,13 +6,15 @@
             "author": "Agatha Christie",
             "genre": "Mystery",
             "rating": 5,
-            "endDate": "2026-03-29"
+            "endDate": "2026-03-29",
+            "pageCount": 250
         },
         {
             "id": "978-1-4642-2136-1",
             "title": "Never Lie",
             "author": "Frieda McFadden",
             "genre": "Thriller",
+            "pageCount": 300,
             "rating": 3.75,
             "endDate": "2025-03-21"
         },
@@ -21,6 +23,7 @@
             "title": "The Locked Door",
             "author": "Frieda McFadden",
             "genre": "Thriller",
+            "pageCount": 292,
             "rating": 3.75,
             "endDate": "2026-01-11"
         },
@@ -29,6 +32,7 @@
             "title": "The Inmate",
             "author": "Frieda McFadden",
             "genre": "Thriller",
+            "pageCount": 323,
             "rating": 4,
             "endDate": "2024-08-20"
         },
@@ -36,6 +40,7 @@
             "id": "978-1-4087-2851-2",
             "title": "The Housemaid",
             "author": "Frieda McFadden",
+            "pageCount": 328,
             "genre": "Thriller",
             "rating": 4.5,
             "endDate": "2024-08-30"
@@ -45,6 +50,7 @@
             "title": "Yellowface",
             "author": "R.F. Kuang",
             "genre": "Thriller",
+            "pageCount": 319,
             "rating": 3.75,
             "endDate": "2025-01-03"
         },
@@ -53,6 +59,7 @@
             "title": "Project Hail Mary",
             "author": "Andy Weir",
             "genre": "Sci-Fi",
+            "pageCount": 476,
             "rating": 3.75,
             "endDate": "2026-04-12"
         },
@@ -61,6 +68,7 @@
             "title": "Water Moon",
             "author": "Samantha Sotto Yambao",
             "genre": "Fantasy",
+            "pageCount": 372,
             "rating": 4.75,
             "endDate": "2026-03-14"
         },
@@ -69,6 +77,7 @@
             "title": "Vengeful",
             "author": "V.E. Schwab",
             "genre": "Fantasy",
+            "pageCount": 562,
             "rating": 4,
             "endDate": "2026-02-15"
         },
@@ -77,6 +86,7 @@
             "title": "Vicious",
             "author": "V.E. Schwab",
             "genre": "Fantasy",
+            "pageCount": 336,
             "rating": 4,
             "endDate": "2026-01-26"
         },
@@ -85,6 +95,7 @@
             "title": "Shadow of the Gods",
             "author": "John Gwynne",
             "genre": "Fantasy",
+            "pageCount": 478,
             "rating": 3.5,
             "endDate": "2026-03-22"
         }

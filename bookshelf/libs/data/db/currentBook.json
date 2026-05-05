@@ -3,7 +3,8 @@
     "title": "Crown of Midnight",
     "author": "Sarah J. Mass",
     "genre": "Fantasy",
-    "page": 34,
+    "pageCount": 420,
+    "currentPage": 34,
     "startDate": "2026-05-04",
     "endDate": null,
     "rating": null

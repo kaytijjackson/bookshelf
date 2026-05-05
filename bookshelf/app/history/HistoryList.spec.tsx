@@ -10,6 +10,7 @@ const history: CompletedBookType[] = [
     rating: 4,
     endDate: "2026-01-01",
     genre: "Fantasy",
+    pageCount: 300,
   },
 ];
 

@@ -1,11 +1,5 @@
-"use client";
-
 import { CompletedBookType } from "@book-data";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2";
-import { ChartContainer } from "./styles";
-
-ChartJS.register(ArcElement, Tooltip, Legend);
+import { PieChart } from "@components";
 
 export const formatGenreData = (history: CompletedBookType[]) => {
   return history?.reduce((acc: Partial<Record<string, number>>, val) => {
@@ -31,23 +25,13 @@ export const GenrePieChart = ({
   const labels = Object.keys(genreData);
   const data = Object.values(genreData);
 
-  const pieChartData = {
-    labels,
-    datasets: [
-      {
-        label: "Genre",
-        data,
-        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
-        borderWidth: 1,
-      },
-    ],
-  };
-
   return (
-    <ChartContainer>
-      <h2>By Genre</h2>
-      <Pie data={pieChartData} />
-    </ChartContainer>
+    <PieChart
+      title="By Genre"
+      tooltipLabel="Genre"
+      labels={labels}
+      data={data}
+    />
   );
 };
 
