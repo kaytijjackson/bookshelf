@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { VStack } from "../Stacks";
 
 export const PageContainer = styled.div`
   display: grid;
@@ -13,7 +14,7 @@ export const PageContainer = styled.div`
   }
 `;
 
-export const Contents = styled.div`
+export const Contents = styled(VStack)`
   grid-column: 2/3;
 
   @media screen and (max-width: 768px) {

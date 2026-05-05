@@ -33,16 +33,18 @@ export const HistoryPage = () => {
   }, [history, currentPage]);
 
   return (
-    <Page title="History Page">
+    <Page title="History">
       <VStack spacing={8}>
         <HistoryList history={visibleBooks} />
         <HistoryTable history={visibleBooks} />
-        <Pagination
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          currentPage={currentPage}
-          totalPages={totalPages}
-        />
+        {history.length > MAX_VISIBLE && (
+          <Pagination
+            handleNext={handleNext}
+            handlePrev={handlePrev}
+            currentPage={currentPage}
+            totalPages={totalPages}
+          />
+        )}
       </VStack>
     </Page>
   );

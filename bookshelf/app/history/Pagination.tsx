@@ -11,14 +11,22 @@ export const Pagination = ({
   currentPage: number;
   totalPages: number;
 }) => {
+  const isPrevDisabled = currentPage === 1;
+  const isNextDisabled = currentPage === totalPages;
+  
   return (
     <PaginationRow>
-      <PaginationButton onClick={handlePrev} disabled={currentPage === 1}>
+      <PaginationButton
+        onClick={handlePrev}
+        disabled={isPrevDisabled}
+        aria-disabled={isPrevDisabled}
+      >
         Prev
       </PaginationButton>
       <PaginationButton
         onClick={handleNext}
-        disabled={currentPage === totalPages}
+        disabled={isNextDisabled}
+        aria-disabled={isNextDisabled}
       >
         Next
       </PaginationButton>

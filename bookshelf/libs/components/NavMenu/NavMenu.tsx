@@ -18,6 +18,13 @@ export const NavMenu = () => {
       >
         History
       </NavLink>
+      <NavLink
+        href="/stats"
+        target="_self"
+        $isActive={currentPath === "/stats"}
+      >
+        Stats
+      </NavLink>
     </NavContainer>
   );
 };
