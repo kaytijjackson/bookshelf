@@ -1,17 +1,31 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Overview
+This app is a log of current reading and past read books. This also includes chart of genres and page counts to show variety in reading.
+
+## Routes
+"/" - Dashboard: Current reading and progress towards reading goal
+"/history" - History: Past read books
+"/stats" - Stats: Breakdown of reading by genre and by page count. Can click on pie chart section to be navigated to history of that genre/book size.
+
+## Future Updates
+- Remove tailwind styling and dependencies
+- Migrate db json files to db (DynamoDB?) to create a persistent accurate log of books
+- Add GraphQL layer to call db and 3rd party apis (look into amazon)
+- Add dark/light mode
+- Make the app pretty
+### Dashboard Page
+- Add ability to update current book placement (update page and finish book)
+- Add "start new book" option with form
+- Add "Continue series" section to show in progress series with link to buy next book amazon/waterstones
+### History Page
+- Add sort by logic on the history page (ex. title, author, date read asc/desc, rating, genre)
+### Stats Page
+- Add bar chart of most popular authors read
+
 ## Getting Started
-
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
