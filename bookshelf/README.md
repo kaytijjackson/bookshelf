@@ -4,9 +4,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 This app is a log of current reading and past read books. This also includes chart of genres and page counts to show variety in reading.
 
 ## Routes
-"/" - Dashboard: Current reading and progress towards reading goal
-"/history" - History: Past read books
-"/stats" - Stats: Breakdown of reading by genre and by page count. Can click on pie chart section to be navigated to history of that genre/book size.
+- "/" - Dashboard: Current reading and progress towards reading goal
+- "/history" - History: Past read books
+- "/stats" - Stats: Breakdown of reading by genre and by page count. Can click on pie chart section to be navigated to history of that genre/book size.
 
 ## Future Updates
 - Remove tailwind styling and dependencies
