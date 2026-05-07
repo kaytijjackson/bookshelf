@@ -1,5 +1,5 @@
-import { VStack } from "@components";
 import styled from "styled-components";
+import { VStack } from "../Stacks";
 
 export const ChartContainer = styled(VStack).attrs({ spacing: 8 })`
     width: 350px;

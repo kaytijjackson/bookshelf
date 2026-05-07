@@ -54,7 +54,6 @@ export const PageCountPieChart = ({
   const options = {
     onClick: (_event: ChartEvent, elements: ActiveElement[]) => {
       if (elements.length > 0) {
-        console.log('element', elements[0]);
         const index = elements[0].index;
         const pageCountFilter = labels[index];
         // TODO: Add cypress test for navigation

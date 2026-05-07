@@ -1,6 +1,5 @@
-import { HStack, VStack } from "@components";
+import { VStack, HStack } from "@components";
 import styled from "styled-components";
-import { Button } from "@radix-ui/themes";
 
 // History Table
 export const StyledTable = styled.table`
@@ -21,14 +20,14 @@ export const HeaderCell = styled.th`
 `;
 
 // History List
-export const List = styled(VStack).attrs({ spacing: 8 })`
+export const List = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
     display: flex;
   }
 `;
 
-export const ListItem = styled(VStack).attrs({ spacing: 4 })`
+export const ListItem = styled.div`
   > div {
     justify-content: space-between;
   }

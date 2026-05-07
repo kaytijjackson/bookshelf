@@ -4,6 +4,12 @@ import { HistoryPage } from "./page";
 import { render, screen } from "@testing-library/react";
 
 jest.mock("../../libs/data/useReadingHistory");
+jest.mock("next/navigation", () => ({
+  ...jest.requireActual('next/navigation'),
+  useSearchParams: () => ({
+    get: jest.fn(),
+  })
+}));
 
 const generateMockBook: (id: string) => CompletedBookType = (id: string) => {
   return {

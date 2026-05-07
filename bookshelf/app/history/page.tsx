@@ -1,7 +1,7 @@
 "use client";
 
 import { Page, VStack } from "@components";
-import { useReadingHistory } from "@book-data";
+import { CompletedBookType, useReadingHistory } from "@book-data";
 import { HistoryTable } from "./HistoryTable";
 import { Pagination } from "./Pagination";
 import { useMemo, useState } from "react";
@@ -9,7 +9,7 @@ import { MAX_VISIBLE } from "./const";
 import { HistoryList } from "./HistoryList";
 import { useSearchParams } from "next/navigation";
 
-const isInPageRange = (pageCount: number, pageRange: string | null) => {
+export const isInPageRange = (pageCount: number, pageRange: string | null) => {
   switch (pageRange) {
     case "<200":
       return pageCount < 200;
@@ -39,12 +39,7 @@ export const HistoryPage = () => {
     setCurrentPage(currentPage - 1);
   };
 
-  const sortedHistory = history.sort(
-    (book1, book2) =>
-      new Date(book2.endDate).getTime() - new Date(book1.endDate).getTime(),
-  );
-
-  const filterHistory = sortedHistory.filter((book) => {
+const filterHistory = history.filter((book) => {
     switch (filter) {
       case "genre":
         return book.genre === type;
@@ -55,12 +50,19 @@ export const HistoryPage = () => {
     }
   });
 
+  const sortedHistory = useMemo(() => {
+    return filterHistory.sort(
+      (book1, book2) =>
+        new Date(book2.endDate).getTime() - new Date(book1.endDate).getTime(),
+    );
+  }, [filterHistory]);
+
   const visibleBooks = useMemo(() => {
-    return filterHistory.slice(
+    return sortedHistory.slice(
       (currentPage - 1) * MAX_VISIBLE,
       currentPage * MAX_VISIBLE,
     );
-  }, [filterHistory, currentPage]);
+  }, [sortedHistory, currentPage]);
 
   const totalPages = useMemo(
     () => Math.ceil(filterHistory.length / MAX_VISIBLE),
