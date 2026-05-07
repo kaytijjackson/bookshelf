@@ -1,20 +1,41 @@
-import { useId } from "react";
-import { VStack } from "../Stacks";
-import { FormComponentLabel } from "./FormComponentLabel";
+"use client";
+
+import { ChangeEventHandler } from "react";
+import { useController, UseControllerProps } from "react-hook-form";
+import { TextInput } from "./TextInput";
 
 type TextInputProps = {
   name: string;
   label: string;
   isRequired?: boolean;
+  onChange?: ChangeEventHandler;
 };
 
-export const TextInputForm = ({ label, name, isRequired }: TextInputProps) => {
-  const id = useId();
+type Props = TextInputProps & Pick<UseControllerProps, "rules">;
+
+export const TextInputForm = ({ name, rules, onChange, ...rest }: Props) => {
+  const {
+    field: { value, ref, onChange: onFormChange },
+    fieldState: { error },
+  } = useController({ name, rules });
+
+  const isValid = !error;
+
+  const handleChange: ChangeEventHandler = () => {
+    onFormChange();
+    if (onChange) {
+      onChange(value);
+    }
+  };
 
   return (
-    <VStack spacing={4}>
-      <FormComponentLabel id={id} label={label} isRequired={isRequired} />
-      <input aria-labelledby={id} name={name} />
-    </VStack>
+    <TextInput
+      name={name}
+      ref={ref}
+      onChange={handleChange}
+      isValid={isValid}
+      errorText={isValid ? undefined : "error text"}
+      {...rest}
+    />
   );
 };
