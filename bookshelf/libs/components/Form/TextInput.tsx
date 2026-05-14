@@ -15,29 +15,30 @@ type TextInputProps = {
 };
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({
-    name,
-    label,
-    isRequired,
-    onChange,
-    isValid,
-    errorText,
-    value,
-  }: TextInputProps) => {
+  (
+    { name, label, isRequired, onChange, isValid, errorText, value, ...props },
+    ref,
+  ) => {
     const id = useId();
     const onChangePreventDefault = (e: ChangeEvent<HTMLInputElement>) => {
       if (onChange) {
         onChange(e);
       }
 
-      console.log('e', e);
       e.preventDefault();
     };
 
     return (
       <VStack spacing={4}>
         <FormComponentLabel id={id} label={label} isRequired={isRequired} />
-        <input name={name} onChange={onChangePreventDefault} value={value} />
+        <input
+          {...props}
+          name={name}
+          value={value}
+          onChange={onChangePreventDefault}
+          aria-labelledby={id}
+          ref={ref}
+        />
         {!isValid && <span>{errorText}</span>}
       </VStack>
     );

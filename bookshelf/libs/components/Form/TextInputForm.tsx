@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, useCallback } from "react";
 import { useController, UseControllerProps } from "react-hook-form";
 import { TextInput } from "./TextInput";
 
@@ -9,33 +9,38 @@ type TextInputProps = {
   label: string;
   isRequired?: boolean;
   onChange?: ChangeEventHandler;
+  value?: string;
 };
 
 type Props = TextInputProps & Pick<UseControllerProps, "rules">;
 
 export const TextInputForm = ({ name, rules, onChange, ...rest }: Props) => {
   const {
-    field: { value, ref, onChange: onFormChange },
+    field: { onChange: onFormChange, value, ref },
     fieldState: { error },
   } = useController({ name, rules });
 
   const isValid = !error;
 
-  const handleChange: ChangeEventHandler = () => {
-    onFormChange();
-    if (onChange) {
-      onChange(value);
-    }
-  };
+  const handleChange: ChangeEventHandler = useCallback(
+    (e) => {
+      onFormChange(e);
+      if (onChange) {
+        onChange(e);
+      }
+    },
+    [onFormChange, onChange],
+  );
 
   return (
     <TextInput
+      {...rest}
       name={name}
-      ref={ref}
-      onChange={handleChange}
       isValid={isValid}
       errorText={isValid ? undefined : "error text"}
-      {...rest}
+      value={value}
+      onChange={handleChange}
+      ref={ref}
     />
   );
 };
