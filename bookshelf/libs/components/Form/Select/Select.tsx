@@ -1,6 +1,6 @@
 import { forwardRef, useId } from "react";
-import { VStack } from "../Stacks";
-import { FormComponentLabel } from "./FormComponentLabel";
+import { VStack } from "../../Stacks";
+import { FormComponentLabel } from "../FormComponentLabel";
 import { SelectProps } from "./SelectForm";
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(

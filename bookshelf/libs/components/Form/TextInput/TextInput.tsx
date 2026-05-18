@@ -1,8 +1,9 @@
 "use client";
 
 import { ChangeEvent, ChangeEventHandler, forwardRef, useId } from "react";
-import { VStack } from "../Stacks";
-import { FormComponentLabel } from "./FormComponentLabel";
+import { FormComponentLabel } from "../FormComponentLabel";
+import { StyledInput } from "./styles";
+import { ComponentContainer } from "../styles";
 
 type TextInputProps = {
   name: string;
@@ -29,9 +30,9 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     };
 
     return (
-      <VStack spacing={4}>
+      <ComponentContainer>
         <FormComponentLabel id={id} label={label} isRequired={isRequired} />
-        <input
+        <StyledInput
           {...props}
           name={name}
           value={value}
@@ -40,7 +41,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           ref={ref}
         />
         {!isValid && <span>{errorText}</span>}
-      </VStack>
+      </ComponentContainer>
     );
   },
 );

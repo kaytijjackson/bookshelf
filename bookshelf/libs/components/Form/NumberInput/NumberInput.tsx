@@ -1,6 +1,7 @@
 import { ChangeEventHandler, forwardRef, useId } from "react";
-import { VStack } from "../Stacks";
-import { FormComponentLabel } from "./FormComponentLabel";
+import { FormComponentLabel } from "../FormComponentLabel";
+import { ComponentContainer } from "../styles";
+import { StyledInput } from "./styles";
 
 export type NumberInputProps = {
   name: string;
@@ -20,9 +21,9 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
     const id = useId();
 
     return (
-      <VStack spacing={4}>
+      <ComponentContainer>
         <FormComponentLabel label={label} isRequired={isRequired} id={id} />
-        <input
+        <StyledInput
           type="number"
           name={name}
           ref={ref}
@@ -30,7 +31,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
           {...props}
         />
         {!isValid && <span>{errorText}</span>}
-      </VStack>
+      </ComponentContainer>
     );
   },
 );
